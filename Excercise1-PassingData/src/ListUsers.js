@@ -6,7 +6,7 @@ class ListUsers extends Component {
   renderUserFavoriteMoveForProfile(profile) {
     let users = this.props.users
     let movies = this.props.movies
-	return <li key={profile.id}>{users[profile.userID].name}\'s favorite movie is {movies[profile.favoriteMovieID].name}.</li>
+    return <li key={profile.id}>{`${users[profile.userID].name}\'s favorite movie is "${movies[profile.favoriteMovieID].name}."`}</li>
   }
   
   render() {

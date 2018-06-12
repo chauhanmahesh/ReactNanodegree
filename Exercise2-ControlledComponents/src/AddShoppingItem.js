@@ -19,7 +19,8 @@ class AddShoppingItem extends Component {
     };
 
     addItem = event => {
-        this.props.addItemHandler(event, this.state.value)
+        event.preventDefault();
+        this.props.addItemHandler(this.state.value)
         // Let's clear the field now.
         this.setState({ value: '' });
     }

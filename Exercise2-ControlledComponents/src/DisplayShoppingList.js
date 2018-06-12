@@ -1,14 +1,18 @@
-import React, {Component} from 'react'
+import React from 'react'
+import PropTypes from "prop-types";
 
-function DisplayShoppingList(props) {
-    const {shoppingItems} = props
+const DisplayShoppingList = props => {
     return (<div>
             <p className="items">Items</p>
             <ol className="item-list">
-                {shoppingItems.map((item, index) => <li key={index}>{item}</li>)}
+                {props.shoppingItems.map((item, index) => <li key={index}>{item}</li>)}
             </ol>
         </div>
     )
-}
+};
+
+DisplayShoppingList.propTypes = {
+    shoppingItems: PropTypes.array.isRequired,
+};
 
 export default DisplayShoppingList;

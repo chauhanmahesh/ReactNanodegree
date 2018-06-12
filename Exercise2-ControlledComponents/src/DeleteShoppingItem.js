@@ -1,20 +1,23 @@
-import React, {Component} from 'react'
+import React from 'react'
+import PropTypes from "prop-types";
 
-class DeleteShoppingItem extends Component {
 
-    noItemsFound = (items) => {
+const DeleteShoppingItem = props => {
+
+    const noItemsFound = (items) => {
         return items === 0;
     };
 
-    render() {
-        const {shoppingItems, deleteLastItem} = this.props
-        return (
-            <button onClick={deleteLastItem} disabled={this.noItemsFound(shoppingItems)}>
-                Delete Last Item
-            </button>
-        )
-    }
+    return (
+        <button onClick={props.deleteLastItem} disabled={noItemsFound(props.shoppingItems)}>
+            Delete Last Item
+        </button>
+    )
+};
 
-}
+DeleteShoppingItem.propTypes = {
+    shoppingItems: PropTypes.array.isRequired,
+    deleteLastItem: PropTypes.func.isRequired,
+};
 
 export default DeleteShoppingItem

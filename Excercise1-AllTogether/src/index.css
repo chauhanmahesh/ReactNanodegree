@@ -72,6 +72,14 @@ button:disabled {
   cursor: not-allowed;
 }
 
+.toggle-games button {
+  color: blue;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
 .smallButton {
   font-size: 17px;
 }
